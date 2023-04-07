@@ -1,0 +1,339 @@
+body {
+  font-family: Arial, sans-serif;
+  /*background-color: #000;*/
+  background-size: cover;
+  height: 100vh;
+}
+p{
+  margin: 5px 0;
+  font-weight: 600;
+  color: #33333370;
+}
+
+
+.button {
+  font-size: 1em;
+  padding: 10px;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 20px/50px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  visibility: hidden;
+  opacity: 0;
+}
+.button:hover {
+  background: #fff;
+  color: #e5e7eb;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  /*visibility: hidden;
+  opacity: 0;*/
+  /* box-shadow: 0 3px 6px 0 #b2b2b2; */
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 8px;
+  background: #fff;
+  border-radius: 5px;
+  width: 50%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup .popup-header .icon-box {
+  right: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 5px;
+  width: 100%;
+}
+
+.popup .popup-header .icon-box a, .popup-text .text-item a{
+   text-decoration: none;
+   margin: 0 4px;
+   font-size: 21px;
+   font-weight: bold;
+   color: #33333370;
+}
+
+.popup .close {
+  /* position: absolute; */
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+   font-size: 30px;
+  font-weight: bold; 
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: #333;
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+ 
+.popup .popup-input,.popup-selected, .popup-text{
+  padding: 15px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+.popup .popup-input .popup-selected-btn a.dark{
+    background-color: #33333370;
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-weight: 500;
+    margin: 8px;
+}
+
+
+.popup span.btn-add{
+  color: #fff;
+}
+span{
+  color: #33333370;
+}
+
+.popup .popup-input .popup-selected-btn{
+  margin-top: 10px;
+}
+.popup-selected{
+  width: 100%;
+}
+.popup .popup-input input,.popup-selected textarea{
+  padding: 15px;
+  width:640px ;
+  border-radius: 5px;
+  border: 1px solid #33333370;
+}
+
+.popup-textarea textarea{
+  height: 150px;
+  padding: 15px;
+  width:640px ;
+  border-radius: 5px;
+}
+.popup .popup-text .popup-content{
+  display: flex;
+  justify-content: space-between;
+}
+.popup .popup-text .popup-content .text-item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.popup-footer{
+  padding: 5px;
+}
+.popup-footer .footer-icon-box{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+}
+
+.popup-footer .footer-icon-box .free{
+  background-color: #b2b2b2;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 5px;
+  border-radius: 25px;
+}
+
+.popup-footer .footer-icon-box .usg-text{
+  border-radius: 25px;
+  border: 2px solid #e5e7eb;
+  color: #33333370;
+  background-color: #fff;
+  padding: 5px;
+}
+
+
+@media screen and (max-width: 700px){
+  .box{
+    width: 70%;
+  }
+  .popup{
+    width: 70%;
+  }
+}
+
+/* Copied above */
+{box-sizing: border-box;}
+
+
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+#fly {
+    position: fixed;
+    bottom: var(--bottom);
+    left: var(--left);
+    padding: 0 !important;
+    width: 50px;
+    margin: 0;
+    height: 50px;
+    z-index: 1000;
+}
+
+#fly_btn {
+    position: absolute;
+    z-index: 1000;
+    height: 50px;
+    width: 50px;
+    background-color: var(--cl0) !important;
+    color: var(--cl1) !important;
+    border-radius: 50%;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#fly_btn #svg1,
+#fly.open #fly_btn svg:nth-child(2) {
+    display: inline;
+}
+#fly.open {
+    width: calc(100vw - 10px);
+}
+#fly.open .a_ib {
+    opacity: 1;
+    visibility: visible;
+}
+.fly_btn {
+    color: var(--cl3);
+    height: 46px;
+    width: 46px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fly_btn {
+    border-radius: 50%;
+    background: var(--cl0);
+}
+
+#fly div svg ,#fly_btn-r svg{
+    height: 26px;
+}
+
+.a_ib {
+    position: absolute;
+    overflow: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 5px;
+    bottom: calc(100% + 10px);
+    padding: 5px !important;
+    left: calc(5px - var(--left));
+    width: calc(100vw - 10px);
+    min-height: 50px;
+    background-color: var(--cl4) !important;
+    border-radius: 50px;
+    box-shadow: 0px 5px 20px #101010;
+    transition: all .3s ease-in-out;
+}
+
+.a_ib div {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 auto;
+    padding: 0 !important;
+    color: var(--cl3);
+    background-color: var(--cl2) !important;
+    border-radius: 50%;
+    box-shadow: 0px 5px 20px rgb(0 0 0 / 15%);
+}
